@@ -14,7 +14,27 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      channel_subscribers: {
+        Row: {
+          channel_name: string
+          id: string
+          last_updated: string
+          subscriber_count: number
+        }
+        Insert: {
+          channel_name: string
+          id?: string
+          last_updated?: string
+          subscriber_count: number
+        }
+        Update: {
+          channel_name?: string
+          id?: string
+          last_updated?: string
+          subscriber_count?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
