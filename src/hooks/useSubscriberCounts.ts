@@ -13,10 +13,14 @@ export const useSubscriberCounts = () => {
   return useQuery({
     queryKey: ['subscriber-counts'],
     queryFn: async () => {
+      // Use type assertion to avoid TypeScript errors with the table name
       const { data, error } = await supabase
         .from('channel_subscribers')
         .select('*')
-        .order('subscriber_count', { ascending: false });
+        .order('subscriber_count', { ascending: false }) as {
+          data: ChannelSubscriber[] | null;
+          error: Error | null;
+        };
 
       if (error) {
         console.error('Error fetching subscriber counts:', error);
