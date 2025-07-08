@@ -8,25 +8,29 @@ const merchItems = [
     name: "JSAL Hoodie",
     price: "$45",
     description: "Premium quality hoodie with the iconic JSAL logo",
-    image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop"
+    image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop",
+    url: "https://jacksucksatlife.com/merch"
   },
   {
     name: "Geography T-Shirt",
     price: "$25",
     description: "Show your love for geography with this exclusive design",
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop"
+    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop",
+    url: "https://jacksucksatlife.com/merch"
   },
   {
     name: "Play Button Mug",
     price: "$18",
     description: "Start your day with a YouTube play button coffee mug",
-    image: "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=400&h=400&fit=crop"
+    image: "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=400&h=400&fit=crop",
+    url: "https://jacksucksatlife.com/merch"
   },
   {
     name: "JSAL Cap",
     price: "$22",
     description: "Stylish cap perfect for any Jack fan",
-    image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=400&fit=crop"
+    image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=400&fit=crop",
+    url: "https://jacksucksatlife.com/merch"
   }
 ];
 
@@ -39,7 +43,7 @@ const Merchandise = () => {
             Official <span className="gradient-text">Merchandise</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Rep your favorite YouTuber with exclusive JSAL merchandise and show your support in style!
+            Rep your favorite YouTuber with official JSAL merchandise and show your support in style!
           </p>
         </div>
 
@@ -59,7 +63,10 @@ const Merchandise = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">{item.description}</p>
-                <Button className="w-full bg-red-600 hover:bg-red-700">
+                <Button 
+                  className="w-full bg-red-600 hover:bg-red-700"
+                  onClick={() => window.open(item.url, '_blank')}
+                >
                   <ShoppingBag className="w-4 h-4 mr-2" />
                   Buy Now
                 </Button>
@@ -69,9 +76,14 @@ const Merchandise = () => {
         </div>
 
         <div className="text-center mt-16">
-          <Button size="lg" variant="outline" className="border-red-600 text-red-600 hover:bg-red-600 hover:text-white">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="border-red-600 text-red-600 hover:bg-red-600 hover:text-white"
+            onClick={() => window.open('https://jacksucksatlife.com/merch', '_blank')}
+          >
             <ExternalLink className="w-5 h-5 mr-2" />
-            View All Merchandise
+            View All Official Merchandise
           </Button>
         </div>
       </div>
